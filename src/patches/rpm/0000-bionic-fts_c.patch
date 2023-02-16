@@ -1,0 +1,12 @@
+--- misc/fts.c.orig	2023-02-16 05:11:23.962998884 -0800
++++ misc/fts.c	2023-02-16 05:13:07.718998845 -0800
+@@ -56,6 +56,9 @@
+ #else
+ 
+ /* Conditionals for working around non-GNU environments */
++#if defined(__BIONIC__)
++#   define __errno_location()   (&errno)
++#endif
+ #if defined(hpux)
+ #   define        _INCLUDE_POSIX_SOURCE
+ #   define __errno_location() 	(&errno)

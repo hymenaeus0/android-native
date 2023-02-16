@@ -1,0 +1,33 @@
+--- tools/elfdeps.c.orig	2023-02-16 05:37:18.198998292 -0800
++++ tools/elfdeps.c	2023-02-16 05:38:41.918998260 -0800
+@@ -111,6 +111,7 @@
+     free(dep);
+ }
+ 
++/*
+ static void processVerDef(Elf_Scn *scn, GElf_Shdr *shdr, elfInfo *ei)
+ {
+     Elf_Data *data = NULL;
+@@ -191,6 +192,7 @@
+     }
+     rfree(soname);
+ }
++ */
+ 
+ static void processDynamic(Elf_Scn *scn, GElf_Shdr *shdr, elfInfo *ei)
+ {
+@@ -241,12 +243,14 @@
+ 	    break;
+ 
+ 	switch (shdr->sh_type) {
++/*
+ 	case SHT_GNU_verdef:
+ 	    processVerDef(scn, shdr, ei);
+ 	    break;
+ 	case SHT_GNU_verneed:
+ 	    processVerNeed(scn, shdr, ei);
+ 	    break;
++ */
+ 	case SHT_DYNAMIC:
+ 	    processDynamic(scn, shdr, ei);
+ 	    break;

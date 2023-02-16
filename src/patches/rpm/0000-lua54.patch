@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-02-16 05:17:16.386998750 -0800
++++ configure.ac	2023-02-16 05:20:40.014998672 -0800
+@@ -783,7 +783,7 @@
+ AM_CONDITIONAL(ACL,[test "$with_acl" = yes])
+ 
+ PKG_CHECK_MODULES([LUA],
+-    [lua >= 5.2],
++    [lua54 >= 5.2],
+     [],
+     [AC_MSG_ERROR([lua not present or too old)])])
+ AC_SUBST(LUA_CFLAGS)
