@@ -1,9 +1,9 @@
 Name: gcc
 Version: 12.2.1%{?gitver:_%{gitver}}
-Release: r1
-Summary: GNU collection of binary utilities
+Release: r2
+Summary: GNU Compiler Collection
 License: FIXME
-URL: FIXME
+URL:      https://gcc.gnu.org/
 Source0: gcc-12.2.1-dec869c95.tar.xz
 # BuildRequires: linux-headers
 # BuildRequires: libc6-dev zlib-dev zstd-dev
@@ -19,7 +19,7 @@ BuildArch: aarch64
 #  $ rpmbuild --define "cross_target aarch64-android-linux-gnu"
 #
 
-%define cross_target aarch64-linux-gnu
+%define _target aarch64-linux-gnu
 
 %define _prefix /data/data/com.termux/files/usr
 %define _sbindir %{_bindir}
